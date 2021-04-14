@@ -4,7 +4,7 @@
 
 @section('content')
 <main class="form-signin">
-    <form method="POST" action="/save">
+    <form method="POST" action="/registration">
       @csrf
       <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Регистрация</h1>

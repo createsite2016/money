@@ -13,11 +13,10 @@ Route::get('/dashboard', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/register', function () {
-    return view('register');
-});
 
-Route::post('/save', [RegistrationController::class, 'save']);
+Route::get('registration', [RegistrationController::class, 'index'])->name('registration.index');
+Route::post('registration', [RegistrationController::class, 'store'])->name('registration.store');
+
 Route::post('/auth', [LoginController::class, 'auth']);
 Route::get('/logout',[LoginController::class, 'logout']);
 

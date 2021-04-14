@@ -8,8 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
+
+    public function index()
+    {
+        return view('registration.index');
+    }
+
     // сохранение пользователя
-    public function save(Request $request)
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'name' => 'required|max:255',

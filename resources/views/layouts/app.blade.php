@@ -53,7 +53,7 @@
           @else
             <div class="text-end">
               <a href="/login" class="btn btn-outline-light me-2">Войти</a>
-              <a href="/register" class="btn btn-warning">Регистрация</a>
+              <a href="/registration" class="btn btn-warning">Регистрация</a>
             </div>
           @endif
           
