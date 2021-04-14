@@ -4,9 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::view('/', 'index')->name('index');
 Route::view('dashboard', 'dashboard')->name('dashboard');
 
 Route::get('registration', [RegistrationController::class, 'index'])->name('registration.index');
