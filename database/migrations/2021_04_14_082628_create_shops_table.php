@@ -18,7 +18,7 @@ class CreateShopsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('site');
-            $table->string('active');
+            $table->boolean('active')->default(true);
         });
     }
 
