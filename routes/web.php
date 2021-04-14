@@ -4,12 +4,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::view('/', 'dashboard')->name('index');
+Route::view('dashboard', 'dashboard')->name('dashboard');
 
 Route::get('registration', [RegistrationController::class, 'index'])->name('registration.index');
 Route::post('registration', [RegistrationController::class, 'store'])->name('registration.store');
