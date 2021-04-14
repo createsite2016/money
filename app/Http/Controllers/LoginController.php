@@ -10,7 +10,12 @@ use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
-    public function auth(Request $request)
+    public function index()
+    {
+        return view('login.index');
+    }
+
+    public function store(Request $request)
     {
         $validated = $request->validate([
             'email' => 'required',
