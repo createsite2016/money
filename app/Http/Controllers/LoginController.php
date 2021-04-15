@@ -23,9 +23,9 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($validated)) {
-            return redirect('/dashboard');
+            return redirect()->route('dashboard');
         } else {
-            return Redirect::back()->withErrors(['email' => 'Не верный логин или пароль'])->withInput();
+            return redirect()->back()->withErrors(['email' => 'Не верный логин или пароль'])->withInput();
         }
 
     }
@@ -33,6 +33,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        
+        return redirect()->back();
     }
 }
