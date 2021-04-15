@@ -18,9 +18,9 @@ class RegistrationController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|string|min:6',
         ]);
         
         $validated['password'] = bcrypt($validated['password']);
