@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use Faker\Factory;
+use App\Models\User;
 
 class RegistrationTest extends TestCase
 {
@@ -18,13 +18,15 @@ class RegistrationTest extends TestCase
 
     public function test_store()
     {
-        $faker = new Factory();
+        $user = User::factory()->make();
+
         $response = $this->post(route('registration.store'),
         [
-            'name' => $faker->create()->name,
-            'email' => $faker->create()->email,
-            'password' => $faker->create()->password
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => 'Secret123'
         ], []);
+        
         $response->assertStatus(302);
     }
 }

@@ -23,7 +23,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($validated)) {
-            return redirect()->route('dashboard');
+            return redirect()->route('user.index');
         } else {
             return redirect()->back()->withErrors(['email' => 'Не верный логин или пароль'])->withInput();
         }

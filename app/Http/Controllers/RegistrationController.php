@@ -27,6 +27,6 @@ class RegistrationController extends Controller
         $user = User::create($validated);
         Auth::login($user);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('user.index');
     }
 }

@@ -2,10 +2,11 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('index');
-Route::view('dashboard', 'dashboard')->name('dashboard');
+Route::get('user', [UserController::class, 'index'])->name('user.index');
 
 Route::get('registration', [RegistrationController::class, 'index'])->name('registration.index');
 Route::post('registration', [RegistrationController::class, 'store'])->name('registration.store');
