@@ -11,7 +11,7 @@ class RegistrationTest extends TestCase
 {
     public function test_index()
     {
-        $response = $this->get(route('registration.index'),[],false);
+        $response = $this->get(route('registration.index'));
 
         $response->assertStatus(200);
     }
